@@ -20,4 +20,21 @@ tools for checking iops :
 ```
 apt install sysstat
 ```
+now use sar command : <br>
 
+- check kernel version : <br>
+```
+uname -a
+```
+- check os version : <br>
+```
+cat /etc/lsb-release
+```
+- check uptime and load average : <br>
+```
+uptime
+```
+ - check cpu count if load average was high : <br>
+ ```
+cat /proc/cpuinfo
+```
