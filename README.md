@@ -19,6 +19,7 @@ note : if we increase the count --> we increase the IOPS
 tools for checking iops :
 ```
 apt install sysstat
+service sysstat restart 
 ```
 now use sar command : <br>
 
@@ -37,4 +38,39 @@ uptime
  - check cpu count if load average was high : <br>
  ```
 cat /proc/cpuinfo
+```
+- check memory info : <br>
+```
+cat /proc/meminfo
+```
+- check total load : <br>
+```
+top
+```
+- check system with sar : (1 is interval )(10 is count of excueting command )(b is block )(d is disk )(n is network )<br> 
+```
+sar -b -d 1 10
+sar -n TCP 1
+```
+- check network port used : <br>
+```
+ss -ltnp
+ss -lunp
+```
+- check tcpdump : <br>
+```
+tcpdump -i ens192 host 192.168.1.100 and port 22
+tcpdump -i ens192 host 192.168.1.100 and port not 22
+```
+- check io
+```
+apt install iotop
+```
+- check proccesses: <br>
+```
+ps -aux
+```
+- kill proccess : <br>
+```
+kill -9 PID
 ```
