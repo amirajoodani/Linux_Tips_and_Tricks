@@ -74,3 +74,22 @@ ps -aux
 ```
 kill -9 PID
 ```
+# Ocuupied Disk Space : <br>
+```
+df
+df -h
+cd / (Ocuupied directory)
+du -sh .
+```
+find occupied directory . with du -sh . <br>
+find large files in that directory <br>
+try to find which proccess do that file extermeley large ? <br>
+try to do not delete files directrly . because maybe some proccess writing on taht files and deleting that files caused error . and now you do not have lg file .after that you should reset your service . <br>
+do not use cat  pipe on big files.  <br>
+find large files and try to find proccess of maker . <br>
+```
+ps -aux | grep file.log | grep -v grep
+while true; do ps aux | grep file.log | grep -v grep; done
+
+
+
