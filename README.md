@@ -90,6 +90,27 @@ find large files and try to find proccess of maker . <br>
 ```
 ps -aux | grep file.log | grep -v grep
 while true; do ps aux | grep file.log | grep -v grep; done
+lsof file.log
+while true; do lsof file.log ; done
+```
+we can rm file and then check lsof agian .somtime if disk is fully occupied , that unkhown proccess cant write on the file. while disk is free , <br> proccess start to write and can lsof <br>
+```
+while true; do ps aux | grep file.log | grep -E -v "watch|grep"; done
+```
+with up command , we can find command that occupied disk . (for example that command is head)
+
+we can find extra large file with gig size with this command : <br>
+```
+du -h <dir> 2>/dev/null | grep '[0-9\.]\+G'
+```
+```
+while true; do ps auxf | grep head | grep -v grep; done
+while true; do ps auxf | grep -B5 head | grep -v grep; done
+```
+now we can find script to occupied disk space . <br>
+
+in this case , we find a proccess . sometimes maybe would be a crucial service that we can not delete . so maybe decrese log level <br>
+can help us . 
 
 
 
